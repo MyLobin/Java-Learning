@@ -1,0 +1,17 @@
+spring:
+    application:
+        name: demo
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.31.102/ssm
+        
+
+rabbitmq:
+    host: 192.168.31.102
+    port: 5672
+    username: guest
+    password: guest
+    
+tutorial:
+  client:
+    duration: 20000
