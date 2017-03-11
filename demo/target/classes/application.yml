@@ -4,6 +4,10 @@ spring:
     datasource:
         driverClassName: com.mysql.jdbc.Driver
         url: jdbc:mysql://192.168.31.102/ssm
+    activemq:
+        broker-url: tcp://localhost:61616
+        user: admin
+        password: secret
         
 
 rabbitmq:
@@ -12,6 +16,3 @@ rabbitmq:
     username: guest
     password: guest
     
-tutorial:
-  client:
-    duration: 20000
