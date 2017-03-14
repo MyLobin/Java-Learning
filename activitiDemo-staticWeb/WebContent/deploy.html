@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
+<link rel="stylesheet" href="lib/bootstrap-table/bootstrap-table.css"/>
 </head>
 <body>
 	<h1>this is for test</h1>
@@ -17,5 +19,25 @@
 	</form>
 	<h1>流程列表</h1>
 	<a href="http://localhost:8088/list">list for deployed process</a>
+	<button onclick="refresh"></button>
+	<div>
+	<table id="processList" class="table"></table>
+	</div>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<script src="lib/bootstrap-table/bootstrap-table.js"></script>
+	<script>
+	$(function(){
+		$("#processList").bootstrapTable({
+			url:"http://localhost:8088/list",
+			dataField:"rows",
+			columns:[{title:"title",field:"field"},{title:"pId",field:"pId"},{title:"pName",field:"pName"}]
+		});
+		
+	})
+	function refresh(){
+		$("#processList").
+	}
+	</script>
 </body>
 </html>

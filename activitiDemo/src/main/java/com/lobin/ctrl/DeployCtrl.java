@@ -1,7 +1,10 @@
 package com.lobin.ctrl;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.zip.ZipInputStream;
 
 import org.activiti.engine.ProcessEngine;
@@ -15,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.alibaba.fastjson.JSON;
 
 @CrossOrigin
 @RestController
@@ -73,11 +78,18 @@ public class DeployCtrl {
 	public String processList() {
 
 		List<ProcessDefinition> processDefinitionList = repositoryService.createProcessDefinitionQuery().list();
-		String list = "";
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		
 		for (ProcessDefinition p : processDefinitionList) {
-			list += "<br/>processId:" + p.getId() + "		processName:" + p.getName();
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("pName", p.getName());
+			map.put("pId", p.getId());
+			list.add(map);
 		}
-
-		return list;
+		System.out.println(list.size());
+		Map<String, Object> mapRows = new HashMap<String, Object>();
+		mapRows.put("rows", list);
+		mapRows.put("total", 800);
+		return JSON.toJSONString(mapRows);
 	}
 }
