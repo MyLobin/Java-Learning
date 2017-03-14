@@ -13,7 +13,7 @@ public class ActivitiConfig {
 	@Autowired
 	private ProcessEngine processEngine;
 
-	@Bean
+//	@Bean
 	public RepositoryService getRepositoryService() {
 		return this.getRepositoryService();
 	}

@@ -5,6 +5,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>this is for test</h1>
+	<form action="http://localhost:8088/test">
+		<input type="submit" name="submit" value="提交" />
+	</form>
+	<hr />
+	<h1>部署流程资源</h1>
+	<form action="http://localhost:8088/deploy" method="post"
+		enctype="multipart/form-data" style="margin-top: 1em;">
+		<input type="file" name="file" /> <input type="submit" value="Submit" />
+	</form>
+	<h1>流程列表</h1>
+	<a href="http://localhost:8088/list">list for deployed process</a>
 </body>
 </html>
