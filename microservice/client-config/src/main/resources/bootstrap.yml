@@ -6,4 +6,11 @@ spring:
  cloud:
   config:
    profile: dev
-   uri: http://localhost:7001/
+#   uri: http://localhost:7001/
+   discovery:
+    enabled: true
+    serviceId: server-config
+eureka:
+ client:
+  serviceUrl:
+   defaultZone: http://localhost:1111/eureka/

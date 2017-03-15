@@ -3,8 +3,8 @@ server:
 spring:
  application:
   name: server-config
- profiles:
-  active: native
+# profiles:
+#  active: native
  cloud:
   config:
    server:
@@ -13,3 +13,7 @@ spring:
      searchPaths: microservice/config-repo
      username: mylobin
      password: password
+eureka:
+ client:
+  serviceUrl:
+   defaultZone: http://localhost:1111/eureka/
