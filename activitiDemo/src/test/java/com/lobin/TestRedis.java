@@ -11,7 +11,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import junit.framework.Assert;
 
 @RunWith(SpringJUnit4ClassRunner.class)  
-@SpringBootTest(classes=Application.class) 
+@SpringBootTest(classes=ActivitiDemoApp.class) 
 @WebAppConfiguration
 public class TestRedis {
 	@Autowired

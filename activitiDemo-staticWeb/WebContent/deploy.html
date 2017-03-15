@@ -19,7 +19,8 @@
 	</form>
 	<h1>流程列表</h1>
 	<a href="http://localhost:8088/list">list for deployed process</a>
-	<button onclick="refresh"></button>
+	<br/>
+	<button onclick="refresh">refresh</button>
 	<div>
 	<table id="processList" class="table"></table>
 	</div>
@@ -30,13 +31,14 @@
 	$(function(){
 		$("#processList").bootstrapTable({
 			url:"http://localhost:8088/list",
-			dataField:"rows",
-			columns:[{title:"title",field:"field"},{title:"pId",field:"pId"},{title:"pName",field:"pName"}]
+// 			dataField:"rows",
+			columns:[{title:"pId",field:"pId"},{title:"pName",field:"pName"}]
 		});
 		
 	})
 	function refresh(){
-		$("#processList").
+		alert("refresh");
+		$("#processList").bootstrapTable("refresh");
 	}
 	</script>
 </body>

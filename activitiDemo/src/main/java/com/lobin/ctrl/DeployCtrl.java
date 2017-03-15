@@ -90,6 +90,8 @@ public class DeployCtrl {
 		Map<String, Object> mapRows = new HashMap<String, Object>();
 		mapRows.put("rows", list);
 		mapRows.put("total", 800);
-		return JSON.toJSONString(mapRows);
+		String result= JSON.toJSONString(list);
+		System.out.println(result);
+		return result;
 	}
 }
