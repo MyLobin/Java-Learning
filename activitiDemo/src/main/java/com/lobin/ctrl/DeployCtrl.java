@@ -9,6 +9,7 @@ import java.util.zip.ZipInputStream;
 
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.RepositoryService;
+import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.DeploymentBuilder;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.apache.commons.io.FilenameUtils;
@@ -60,8 +61,10 @@ public class DeployCtrl {
 				// 其他类型的文件直接部署
 				deployment.addInputStream(fileName, fileInputStream);
 			}
-			deployment.deploy();
+			Deployment deploy=deployment.deploy();
 			System.out.println("the file name is:" + fileName);
+			String processKey=repositoryService.createProcessDefinitionQuery().deploymentId(deploy.getId()).singleResult().getKey();
+			System.out.println(processKey);
 		} catch (Exception e) {
 			// logger.error("error on deploy process, because of file input
 			// stream");
