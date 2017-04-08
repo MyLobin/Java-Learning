@@ -3,7 +3,6 @@ package com.lobin.base.generics;
 import java.io.Serializable;
 
 public class GenericsClass<T> {
-
 	private T t;
 
 	public T getT() {
