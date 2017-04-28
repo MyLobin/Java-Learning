@@ -7,5 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface TestService {
     @RequestMapping(method = RequestMethod.GET, value = "/list")
     String list();
+    @RequestMapping(method = RequestMethod.GET, value = "/welcome")
+	String welcome();
 
 }
