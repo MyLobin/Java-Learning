@@ -16,4 +16,8 @@ public class TestCtrl {
 	public String list() {
 		return testService.list();
 	}
+	@RequestMapping(value="/welcome",method=RequestMethod.GET)
+	public String welcome(){
+		return testService.welcome();
+	}
 }

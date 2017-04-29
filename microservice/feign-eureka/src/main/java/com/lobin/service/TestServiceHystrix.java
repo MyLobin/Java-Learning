@@ -9,4 +9,9 @@ public class TestServiceHystrix implements TestService{
 		return "error:feign hystrix excute";
 	}
 
+	@Override
+	public String welcome() {
+		return "error:feign hystrix excute";
+	}
+
 }
